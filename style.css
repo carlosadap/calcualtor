@@ -20,7 +20,12 @@ footer {
   height: 10%;
 }
 
-p {
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5em;
+  margin: 0.2em;
   font-size: 2em;
 }
 
@@ -49,64 +54,54 @@ p {
   border: black solid 1em;
 }
 
-.display {
+#display {
   background-color: aliceblue;
   grid-area: display;
   margin: 1em;
   border-radius: 5%;
 }
 
-
-
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1em;
-  margin: 0.5em;
-}
-
 .number {
   background-color: #a5a58d;
 }
 
-.one {
+#numOne {
   grid-area: one;
 }
 
-.two {
+#numTwo {
   grid-area: two;
 }
  
-.three {
+#numThree {
   grid-area: three;
 }
  
-.four {
+#numFour {
   grid-area: four;
 }
  
-.five {
+#numFive {
   grid-area: five;
 }
  
-.six {
+#numSix {
   grid-area: six;
 }
  
-.seven {
+#numSeven {
   grid-area: seven;
 }
  
-.eight {
+#numEight {
   grid-area: eight;
 }
  
-.nine {
+#numNine {
   grid-area: nine;
 }
  
-.zero {
+#numZero {
   grid-area: zero;
 }
 
@@ -114,30 +109,30 @@ p {
   background-color: rgb(24, 86, 139);
 }
 
-.ac {
+#opAc {
   grid-area: ac;
 }
-.change-sign {
+#opChangeSign {
   grid-area: change-sign;
 }
-.percent {
+#opPercent {
   grid-area: percent;
 }
-.divide {
+#opDvide {
   grid-area: divide;
 }
-.multiply {
+#opMultiply {
   grid-area: multiply;
 }
-.subtract {
+#opSubtract {
   grid-area: subtract;
 }
-.dot {
+#opDot {
   grid-area: dot;
 }
-.equal {
+#opEqual {
   grid-area: equal;
 }
-.sum {
+#opSum {
   grid-area: sum;
 }
