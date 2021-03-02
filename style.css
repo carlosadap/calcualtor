@@ -1,0 +1,143 @@
+html,body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #b7b7a4;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: #cb997e;
+  height: 10%;
+}
+
+footer {
+  background-color: #cb997e;
+  height: 10%;
+}
+
+p {
+  font-size: 2em;
+}
+
+.main {
+  background-color: aliceblue;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  background-color: #eddcd2;
+  width: 50%;
+  height: 75%;
+  display: grid;
+  grid: "display display display display"
+        "ac change-sign percent divide" 
+        "seven eight nine multiply"
+        "four five six subtract"
+        "one two three sum"
+        "zero zero dot equal";
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5em;
+  border: black solid 1em;
+}
+
+.display {
+  background-color: aliceblue;
+  grid-area: display;
+  margin: 1em;
+  border-radius: 5%;
+}
+
+
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1em;
+  margin: 0.5em;
+}
+
+.number {
+  background-color: #a5a58d;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+ 
+.three {
+  grid-area: three;
+}
+ 
+.four {
+  grid-area: four;
+}
+ 
+.five {
+  grid-area: five;
+}
+ 
+.six {
+  grid-area: six;
+}
+ 
+.seven {
+  grid-area: seven;
+}
+ 
+.eight {
+  grid-area: eight;
+}
+ 
+.nine {
+  grid-area: nine;
+}
+ 
+.zero {
+  grid-area: zero;
+}
+
+.operation {
+  background-color: rgb(24, 86, 139);
+}
+
+.ac {
+  grid-area: ac;
+}
+.change-sign {
+  grid-area: change-sign;
+}
+.percent {
+  grid-area: percent;
+}
+.divide {
+  grid-area: divide;
+}
+.multiply {
+  grid-area: multiply;
+}
+.subtract {
+  grid-area: subtract;
+}
+.dot {
+  grid-area: dot;
+}
+.equal {
+  grid-area: equal;
+}
+.sum {
+  grid-area: sum;
+}
