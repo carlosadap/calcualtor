@@ -63,3 +63,7 @@ Here are some use cases (abilities your project needs to have):
 
 10. EXTRA CREDIT: Add keyboard support!
 
+---
+
+This project is part of [The Odin Project](https://www.theodinproject.com/home)
+
