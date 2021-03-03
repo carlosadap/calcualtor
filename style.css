@@ -4,20 +4,9 @@ html,body {
 }
 
 body {
-  background-color: #b7b7a4;
   display: flex;
   flex-direction: column;
   height: 100vh;
-}
-
-header {
-  background-color: #cb997e;
-  height: 10%;
-}
-
-footer {
-  background-color: #cb997e;
-  height: 10%;
 }
 
 button {
@@ -28,6 +17,41 @@ button {
   margin: 0.2em;
   font-size: 2em;
   outline: none;
+  box-shadow: 0.1em 0.1em 0.5em rgb(122, 120, 120);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3b303e;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  height: 10%;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #f8f8f8;
+}
+
+h2 {
+  font-size: 1em;
+  color: #f8f8f8;
+}
+
+a {
+  color: blanchedalmond;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3b303e;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  height: 10%;
 }
 
 .main {
@@ -39,7 +63,7 @@ button {
 }
 
 .wrapper {
-  background-color: #eddcd2;
+  background-color: #e5b9b5;
   width: 50%;
   height: 75%;
   display: grid;
@@ -52,36 +76,39 @@ button {
         "zero zero dot equal";
   grid-template-rows: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.5em;
-  border: black solid 1em;
+  box-shadow: 1em 1em 0.5em gray;
+  border-radius: 3%;
+  padding: 1em;
 }
 
 #display {
   background-color: aliceblue;
   grid-area: display;
   margin: 0.5em;
-  border-radius: 5%;
+  border-radius: 10%;
   height: 2em;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0.5em;
-  font-size: 2em;
+  padding: 0.25em 0.5em;
+  font-size: 2.5em;
+  box-shadow: 0.1em 0.1em 0.5em rgb(0, 0, 0);
 }
 
 #miniDisplay {
-  background-color: aqua;
+  background-color: #bcb589;
   grid-area: miniDisplay;
   margin: 0.5em 1em 0 1em;
-  border-radius: 5%;
+  border-radius: 5% 5%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 1em;
+  padding: 0.25em 0.5em;
+  box-shadow: 0.05em 0.05em 0.25em rgb(0, 0, 0);
 }
 
 .number {
-  background-color: #a5a58d;
+  background-color: #ededd8;
 }
 
 #numOne {
@@ -125,7 +152,11 @@ button {
 }
 
 .operation {
-  background-color: rgb(24, 86, 139);
+  background-color: #dcc08b;
+}
+
+.mainOperation {
+  background-color: #e8e8c1;
 }
 
 #opAc {
