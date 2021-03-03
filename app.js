@@ -55,6 +55,7 @@ opEqual.addEventListener('click', (e) => {
   if (!isOperating) {
     isOperating = true;
     resultValue = calculate(resultValue, currentOperation, currentValue)
+    currentValue = resultValue.toString();
     updateDisplays(resultValue, `${e.target.value} ${resultValue}`);
   }
 })
@@ -67,8 +68,10 @@ opPercent.addEventListener('click', () => {
 })
 
 opChangeSign.addEventListener('click', () => {
-  currentValue = -currentValue;
-  updateDisplays(currentValue);
+  isOperating = true;
+  resultValue = -parseFloat(currentValue);
+  currentValue = resultValue.toString();
+  updateDisplays(currentValue, `+/- ${currentValue}`);
 })
 
 function updateDisplay(value) {
