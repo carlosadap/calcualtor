@@ -12,9 +12,11 @@ let currentOperation = '+';
 numBtns.forEach(button => button.addEventListener('click', handleNumBtnClick))
 
 function handleNumBtnClick (e) {
-  // display.textContent += e.target.value;
-  miniDisplay.textContent += `${e.target.value}`
-  display.textContent = mathMagic(currentOperation, currentValue, parseInt(e.target.value));
+  miniDisplay.textContent += `${e.target.value}`;
+  const newValue = parseInt(e.target.value);
+  const result = calculate(currentValue, currentOperation, newValue)
+  currentValue = result;
+  display.textContent = newValue;
 }
 
 opBtns.forEach(button => button.addEventListener('click', handleOpBtnClick))
@@ -22,13 +24,10 @@ opBtns.forEach(button => button.addEventListener('click', handleOpBtnClick))
 function handleOpBtnClick (e) {
   miniDisplay.textContent += ` ${e.target.value} `
   currentOperation = e.target.value
+  resolve();
 }
 
-function mathOMatic (e) {
-
-}
-
-opAc.addEventListener('click', reset)
+opAc.addEventListener('click', reset);
 
 function reset () {
   currentValue = 0;
@@ -37,13 +36,20 @@ function reset () {
   miniDisplay.textContent = "";
 }
 
-const mathMagic = (operation, num1, num2) => {
+opEqual.addEventListener('click', resolve);
+
+function resolve () {
+  display.textContent = currentValue;
+}
+
+
+function calculate(num1, operation, num2) {
   switch (operation) {
     case '+': return num1 + num2;
     case '-': return num1 - num2;
     case '*': return num1 * num2;
     case '/': return num1 / num2;
-    case '%': return a / 100;
-    case '+/-': return -a;
   }
 }
+
+
