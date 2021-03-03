@@ -2,26 +2,35 @@ const buttons = document.querySelectorAll('button')
 const miniDisplay = document.querySelector('#miniDisplay')
 const display = document.querySelector('#display')
 const numBtns = document.querySelectorAll('.number')
-const opBtns = document.querySelectorAll('.operation')
+const mainOpBtns = document.querySelectorAll('.mainOperation')
 const opAc = document.querySelector('#opAc')
 const opEqual = document.querySelector('#opEqual')
 const opPercent = document.querySelector('#opPercent')
+const opChangeSign = document.querySelector('#opChangeSign')
 
-let currentValue = 0;
+let currentValue = "";
 let currentOperation = '+';
+let isOperating = false;
 
 numBtns.forEach(button => button.addEventListener('click', handleNumBtnClick))
 
 function handleNumBtnClick(e) {
-  const newValue = parseInt(e.target.value);
-  const result = calculate(currentValue, currentOperation, newValue)
-  currentValue = result;
-  updateDisplays(newValue);
+  if (!isOperating) {
+    currentValue += e.target.value;
+    updateDisplays(currentValue);
+  } else {
+    const newValue = parseInt(e.target.value);
+    const result = calculate(currentValue, currentOperation, newValue)
+    currentValue = result;
+    updateDisplays(newValue);
+  }
 }
 
-opBtns.forEach(button => button.addEventListener('click', handleOpBtnClick))
+mainOpBtns.forEach(button => button.addEventListener('click', handleOpBtnClick))
 
 function handleOpBtnClick(e) {
+  isOperating = true;
+  currentValue = parseInt(currentValue);
   currentOperation = e.target.value
   updateDisplays(currentValue, e.target.value);
 }
@@ -29,7 +38,8 @@ function handleOpBtnClick(e) {
 opAc.addEventListener('click', reset);
 
 function reset() {
-  currentValue = 0;
+  isOperating = false;
+  currentValue = "";
   currentOperation = '+';
   display.textContent = currentValue;
   miniDisplay.textContent = "";
@@ -40,7 +50,12 @@ opEqual.addEventListener('click', () => {
 })
 
 opPercent.addEventListener('click', () => {
-  currentValue /= 100;
+  currentValue = parseInt(currentValue)/100;
+  updateDisplays(currentValue);
+})
+
+opChangeSign.addEventListener('click', () => {
+  currentValue = -currentValue;
   updateDisplays(currentValue);
 })
 
@@ -48,8 +63,12 @@ function updateDisplay(value) {
   display.textContent = value;
 }
 
-function updateMiniDisplay(value) {
-  miniDisplay.textContent += ` ${value} `;
+function updateMiniDisplay(value, operating = isOperating) {
+  if (operating) {
+    miniDisplay.textContent += ` ${value} `;
+  } else {
+    miniDisplay.textContent = value;
+  }
 }
 
 function updateDisplays(displayValue, miniDisplayValue = displayValue) {
