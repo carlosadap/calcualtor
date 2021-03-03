@@ -18,6 +18,12 @@ button {
   font-size: 2em;
   outline: none;
   box-shadow: 0.1em 0.1em 0.5em rgb(122, 120, 120);
+  transition: all 0.5s ease;
+  filter: grayscale(0%);
+}
+
+button:hover {
+  filter: grayscale(100%);
 }
 
 header {
