@@ -19,7 +19,7 @@ function handleNumBtnClick(e) {
     currentValue += e.target.value;
     updateDisplays(currentValue);
   } else {
-    const newValue = parseInt(e.target.value);
+    const newValue = parseFloat(e.target.value);
     const result = calculate(currentValue, currentOperation, newValue)
     currentValue = result;
     updateDisplays(newValue);
@@ -30,7 +30,7 @@ mainOpBtns.forEach(button => button.addEventListener('click', handleOpBtnClick))
 
 function handleOpBtnClick(e) {
   isOperating = true;
-  currentValue = parseInt(currentValue);
+  currentValue = parseFloat(currentValue);
   currentOperation = e.target.value
   updateDisplays(currentValue, e.target.value);
 }
@@ -50,7 +50,7 @@ opEqual.addEventListener('click', () => {
 })
 
 opPercent.addEventListener('click', () => {
-  currentValue = parseInt(currentValue)/100;
+  currentValue = parseFloat(currentValue)/100;
   updateDisplays(currentValue);
 })
 
